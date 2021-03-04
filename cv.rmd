@@ -1,0 +1,140 @@
+---
+title: "Paul Johnson's CV"
+author: Paul Johnson
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: true
+output:
+  pagedown::html_resume:
+    css: ['dd_cv.css', 'resume']
+    self_contained: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+source("cv_printing_functions.r")
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1TQtmeiPxZ2hTlncQep16CitMeKXK_HNz44DAmND46Y0/edit#gid=1730172225",  
+  pdf_mode = params$pdf_mode
+)
+
+```
+
+
+```{r}
+# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
+```
+
+
+Aside
+================================================================================
+![profile image](paul.png)
+
+```{r}
+if(params$pdf_mode){
+  cat("View this CV online with links at [_paulrjohnson.net/cv_](https://paulrjohnson.net/cv.html)")
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://paulrjohnson.net/cv.pdf)")
+}
+```
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %>% print_contact_info()
+```
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_text_block('analytical')
+CV %<>% print_text_block('programming')
+CV %<>% print_text_block('packages')
+CV %<>% print_text_block('tools')
+```
+
+<br>
+<br>
+<br>
+<br>
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+
+CV built using [datadrivencv](https://github.com/nstrayer/datadrivencv) & [pagedown](https://github.com/rstudio/pagedown). 
+
+Last updated on `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Paul Johnson {#title}
+--------------------------------------------------------------------------------
+
+```{r}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro") 
+```
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('education')
+```
+
+Selected Work Experience {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('work_experience')
+```
+
+Further Work Experience {data-icon=briefcase}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('further_work')
+```
+
+Selected Publications {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('academic_articles')
+```
+
+Ongoing Research {data-icon=flask}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('ongoing_research')
+```
+
+
+```{r}
+CV %<>% print_links()
+```
+

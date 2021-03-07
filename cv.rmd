@@ -74,11 +74,9 @@ CV %<>% print_text_block('tools')
 <br>
 <br>
 <br>
-<br>
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
-
 
 CV built using [datadrivencv](https://github.com/nstrayer/datadrivencv) & [pagedown](https://github.com/rstudio/pagedown). 
 
@@ -131,10 +129,5 @@ Ongoing Research {data-icon=flask}
 
 ```{r}
 CV %<>% print_section('ongoing_research')
-```
-
-
-```{r}
-CV %<>% print_links()
 ```
 

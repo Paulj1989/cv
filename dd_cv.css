@@ -30,12 +30,12 @@ sup {
 * {
   /* Override default right margin for sidebar*/
   --pagedjs-margin-right: 0.2in;
-  --pagedjs-margin-left: 0.15in;
+  --pagedjs-margin-left: 0.2in;
 }
 
 /* Customize some of the sizing variables */
 :root {
-  --sidebar-width: 12rem; /* Shrink sidebar width  */
+  --sidebar-width: 12.5rem; /* Shrink sidebar width  */
   --sidebar-background-color: #f5f3f4; /* Make sidebar blue */
   --sidebar-horizontal-padding: 0.01in; /* Reduce sidebar padding */
   --decorator-outer-dim: 10px; /* Make position deliniating circles larger */
@@ -43,7 +43,7 @@ sup {
 }
 
 .details .place {
-  margin-top: 0.22rem;
+  margin-top: 0.25rem;
 }
 
 .main-block:not(.concise) .details div {
@@ -71,15 +71,15 @@ a:link {
 }
 /* A link that has been visited */
 a:visited {
-    color: #370617;
+    color: #Ef233c;
 }
 /* A link that is hovered on */
 a:hover {
-    color: #023E8A;
+    color: #01367A;
 }
 /* A link that is selected */
 a:active {
-    color: #D12424;
+    color: #EF233C;
 }
 
 /* Move closer to start and up towards header */
@@ -95,9 +95,9 @@ a:active {
 
 /* Make sure elements in aside are centered and have a nice small text */
 .aside {
-  width: calc(var(--sidebar-width) + 9px);
+  width: calc(var(--sidebar-width) + 8px);
   line-height: 1.2;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 /* Make little circle outline be a light blue */

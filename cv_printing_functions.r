@@ -205,25 +205,25 @@ print_text_block <- function(cv, label){
 
 
 #' @description List of all links in document labeled by their superscript integer.
-print_links <- function(cv) {
-  n_links <- length(cv$links)
-  if (n_links > 0) {
-    cat("
-Links {data-icon=link}
---------------------------------------------------------------------------------
+#print_links <- function(cv) {
+#  n_links <- length(cv$links)
+#  if (n_links > 0) {
+#    cat("
+#Links {data-icon=link}
+#--------------------------------------------------------------------------------
 
-<br>
+#<br>
 
 
-")
+#")
 
-    purrr::walk2(cv$links, 1:n_links, function(link, index) {
-      print(glue::glue('{index}. {link}'))
-    })
-  }
+#    purrr::walk2(cv$links, 1:n_links, function(link, index) {
+#      print(glue::glue('{index}. {link}'))
+#    })
+#  }
 
-  invisible(cv)
-}
+#  invisible(cv)
+#}
 
 
 

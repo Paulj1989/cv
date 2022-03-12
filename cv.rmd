@@ -121,6 +121,7 @@ CV %<>% print_section('research')
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-CV built using [datadrivencv](https://github.com/nstrayer/datadrivencv) & [pagedown](https://github.com/rstudio/pagedown). 
+CV built using [datadrivencv](https://github.com/nstrayer/datadrivencv)  
+& [pagedown](https://github.com/rstudio/pagedown). 
 
 Last updated on `r Sys.Date()`.

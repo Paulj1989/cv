@@ -75,13 +75,6 @@ CV %<>% print_text_block('tools')
 <br>
 <br>
 
-Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
-
-CV built using [datadrivencv](https://github.com/nstrayer/datadrivencv) & [pagedown](https://github.com/rstudio/pagedown). 
-
-Last updated on `r Sys.Date()`.
-
 
 
 Main
@@ -117,17 +110,17 @@ Further Work Experience {data-icon=briefcase}
 CV %<>% print_section('further_work')
 ```
 
-Selected Publications {data-icon=book}
+Publications & Selected Research {data-icon=flask}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('academic_articles')
+CV %<>% print_section('research')
 ```
 
-Ongoing Research {data-icon=flask}
+
+Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-```{r}
-CV %<>% print_section('ongoing_research')
-```
+CV built using [datadrivencv](https://github.com/nstrayer/datadrivencv) & [pagedown](https://github.com/rstudio/pagedown). 
 
+Last updated on `r Sys.Date()`.

@@ -1,18 +1,17 @@
 ---
 name: Paul
 surname: Johnson
-position: "Data Scientist"
-address: "School of Physics & Chemistry, École Normale Supérieure"
-phone: 07869760968
+position: "Data Scientist with Experience in Healthcare, Sports Analytics, and Social Science"
+phone: "+44 7869 760 968"
 www: paulrjohnson.net
 email: "paul@paulrjohnson.net"
 twitter: paul_johnson89
 github: paulj1989
 linkedin: paulj1989
 date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: 414141
 output: 
-  vitae::awesomecv:
-    page_total: true
+  vitae::awesomecv
 ---
 
 ```{r setup, include=FALSE}
@@ -20,11 +19,9 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
 ```
 
-# Some stuff about me
+# Professional Summary
 
- * I poisoned myself doing research.
- * I was the first woman to win a Nobel prize
- * I was the first person and only woman to win a Nobel prize in two different sciences.
+I am a data scientist based in London, currently working for the NHS South, Central and West CSU in Population Health Management. I am interested in using causal inference and machine learning to help create actionable insights and shape business decisions.
 
 # Education
 
@@ -32,35 +29,104 @@ library(vitae)
 library(tibble)
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Political Science MA", "1889-91", "University of Houston", "Houston, Texas",
-  "Global Politics MSc", "1893", "University of Southampton", "Southampton, United Kingdom",
-  "Politics BA Hons", "1894", "University of Sussex", "Brighton, United Kingdom"
-) %>% 
+  "Political Science MA", "2017 - 2020", "University of Houston", "Houston, TX",
+  "Global Politics MSc", "2011 - 2012", "University of Southampton", "Southampton, UK",
+  "Politics BA Hons", "2008 - 2011", "University of Sussex", "Brighton, UK"
+) |> 
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
-# Work
+# Work Experience
 
 ```{r}
 tribble(
-  ~Year, ~Type, ~Desc,
-  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
-  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
-) %>% 
-  brief_entries(
-    glue::glue("Nobel Prize in {Type}"),
-    Year, 
-    Desc
-  )
+  ~ Title, ~ Year, ~ Employer, ~ Where, ~ Details,
+  "Principal Data Scientist", "2021 - Present", "NHS South, Central & West", "Remote", 
+  "Providing technical expertise in analytics and research-focused projects across the organization, including experimental and observational analysis of healthcare interventions", 
+  NA, NA, NA, NA,
+  "Building and deploying machine learning models that forecast the daily event counts in A&E and other Urgent and Emergency Care Services",
+  NA, NA, NA, NA,
+  "Leading the development of organisational expertise in data science, including demonstrating and training colleagues in statistics, machine learning, and programming",
+  NA, NA, NA, NA,
+  "Supporting the development of the organisation’s infrastructure for developing and deploying data science.",
+  
+  "Associate BI Consultant", "2021", "NHS South, Central & West", "Remote", 
+  "Led research on the wider determinants of health inequalities and the role of deprivation in health outcomes", 
+  NA, NA, NA, NA,
+  "Supported the Population Health Management team with research design, statistical modeling, and communication and visualization of findings",
+  NA, NA, NA, NA,
+  "Leading the development of organisational expertise in data science, including demonstrating and training colleagues in statistics, machine learning, and programming",
+  NA, NA, NA, NA,
+  "Supporting the development of the organisation’s infrastructure for developing and deploying data science",
+  
+  "Graduate Research Assistant", "2018 - 2020", "University of Houston", "Houston, TX", 
+  "Built natural language processing models for research into political language in legal texts", 
+  NA, NA, NA, NA,
+  "Supported the Population Health Management team with research design, statistical modeling, and communication and visualization of findings",
+  NA, NA, NA, NA,
+  "Supported the Political Party Database Project in the administering of the expert survey and maintenance of the project website",
+  
+    "Graduate Teaching Assistant", "2017 - 2019", "University of Houston", "Houston, TX", 
+  "Courses: Intro to Comparative Politics, Mexican Politics, Comparative Elections, Media & Politics",
+  
+  "Fundraising Manager: Product Innovation", "2016 - 2017", "Marie Curie", "London, UK", 
+  "Managed Marie Curie’s biggest regular fundraising campaign (Fundraising My Way)", 
+  NA, NA, NA, NA,
+  "Assisted the development of new fundraising products and the innovation of existing campaigns",
+
+  "Events & Corporate Fundraiser", "2015 - 2016", "World Child Cancer", "London, UK", 
+  "Developed, recruited, and managed the charity’s largest charity event to-date (Kilimanjaro trek) and various major events (Ride 100, Great North Run)", 
+  NA, NA, NA, NA,
+  "Supported the Head of Corporate Fundraising in the successful corporate partnership with Deutsche Bank",
+  
+) |> 
+  tidyr::fill(-Details) |>
+  detailed_entries(Employer, Year, Title, Where, Details)
 ```
 
-# Publications
+# Further Work Experience
 
 ```{r}
-library(dplyr)
-knitr::write_bib(c("vitae", "tibble"), "packages.bib")
-
-bibliography_entries("packages.bib") %>%
-  arrange(desc(author$family), issued)
+tribble(
+  ~ Title, ~ Year, ~ Employer, ~ Where,
+  "Events Coordinator", "2014 - 2015", "Family for Every Child", "London, UK",
+  "Oncology Outpatient Clerk", "2013 - 2014", "University Hospital Southampton", "Southampton, UK",
+  "Income Management Assistant", "2012 - 2013", "University Hospital Southampton", "Southampton, UK",
+) |>
+  detailed_entries(Employer, Year, Title, Where)
 ```
 
+# Skills
+
+## Analytics
+
+Statistics (Frequentist & Bayesian), Data Visualisation, Causal Inference, Machine Learning, Forecasting
+
+## Programming
+
+Python, R, SQL
+
+## Packages
+
+tidyverse, tidymodels, fable, lme4, brms, rstanarm, Shiny, pandas, sklearn, Optuna, spaCy, keras
+
+## Tools
+
+Git, Docker, Quarto, GitHub Actions, DVC, RStudio Workbench & Connect
+
+# Publications & Selected Research
+
+```{r}
+tribble(
+  ~ Title, ~ Year, ~ Employer, ~ Where, ~ Details,
+  "The Nationalization of Mexican Parties", "2020", "P Johnson & F Cantu", "Politica y Gobierno 27 (2)",
+  "Measuring the static and dynamic nationalization of Mexican parties, and the importance of national, state, and district factors in explaining the variance of the parties’ electoral support.",
+    "Hypothesis Testing for Reliability Statistics: A Permutation Approach", NA, "P Johnson & J Kirkland", NA,
+  "Using a series of Monte Carlo studies to demonstrate how researchers can leverage permutation approaches to hypothesis testing for evaluating the statistical reliability of a latent scale.",
+) |>
+  detailed_entries(Employer, Year, Title, Where, Details)
+```
+
+# References
+
+- Available on Request
